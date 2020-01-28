@@ -7,6 +7,10 @@ from django.shortcuts import render, HttpResponse, loader
 
 
 def index(request):
-    return render(request, 'base.html')
+    return render(request, 'index.html')
+
+
+def login(request):
+    return render(request, 'logon.html')
 
 
