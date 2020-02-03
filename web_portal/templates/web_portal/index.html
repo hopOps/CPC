@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="starter-template">
+    <p></p>
+    <h1>Pixxx</h1>
+    <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+
+{% if latest_picture_list %}
+    <ul>
+    {% for picture in latest_picture_list %}
+       <!-- <li><a href="/web_portal/{{ picture.id }}/">{{ picture.name }}</a></li>-->
+        <li><a href="{% url 'web_portal:detail' picture.id %}">{{ picture.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No pictures are available.</p>
+{% endif %}
+
+  </div>
+{% endblock content %}

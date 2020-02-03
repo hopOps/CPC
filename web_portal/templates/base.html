@@ -1,18 +1,21 @@
 <!doctype html>
 <html lang="en">
+{% load bootstrap4 %}
 ---
 layout: From Start Template
 title: Base
 extra_css: "starter-template.css"
 ---
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
+<!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+-->
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
 
   <div class="collapse navbar-collapse" id="navbarsExampleDefault">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="{% url 'web_portal:index' %}">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Link</a>
@@ -30,7 +33,8 @@ extra_css: "starter-template.css"
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
-      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Login</button>
+      <a class="btn btn-secondary my-2 my-sm-0" href="{% url 'web_portal:login' %}" >Login</a>
+ <!--      <button class="btn btn-secondary my-2 my-sm-0" href="{ url 'web_portal:login' }" type="submit">Login</button> -->
     </form>
   </div>
 </nav>
@@ -39,6 +43,5 @@ extra_css: "starter-template.css"
   {% block content %}
 
   {% endblock content %}
-
 </main><!-- /.container -->
 </html>

@@ -16,11 +16,18 @@ Create django project
 Create app in django
 
     python manage.py startapp web_portal
+    
+    # For users management
+    python manage.py startapp users
 
 Don't forget to register the application in *settings.py* file:
     
     INSTALLED_APPS [
     'web_portal',
+    ]
+    
+    INSTALLED_APPS [
+    'users',
     ]
 
 ## Django Models
