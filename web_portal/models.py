@@ -8,6 +8,9 @@ class Author(models.Model):
     last_name = models.CharField(max_length=60)
     mail = models.EmailField
 
+    def __str__(self):
+        return self.first_name + " " + self.last_name
+
 
 class Category(models.Model):
     id = models.AutoField(primary_key=True)
@@ -26,3 +29,6 @@ class Picture(models.Model):
     description = models.CharField(max_length=1000)
     pub_date = models.DateTimeField('date published')
     photo = models.ImageField(upload_to="gallery", default='default.jpg')
+
+    def __str__(self):
+        return self.name

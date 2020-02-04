@@ -6,7 +6,9 @@
 
         MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
         MEDIA_URL = '/media/'
-        
+   
+ *MEDIA_URL is web_portal for this site*
+   
 - Add these lines in our main URL.py
 
         from . import views, settings
@@ -21,4 +23,6 @@
 
         photo = models.ImageField(upload_to="gallery")
         
+ - In our template file
  
+        <img src="{{ picture.photo }}"/>
