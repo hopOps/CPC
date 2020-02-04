@@ -25,3 +25,4 @@ class Picture(models.Model):
     name = models.CharField(max_length=100)
     description = models.CharField(max_length=1000)
     pub_date = models.DateTimeField('date published')
+    photo = models.ImageField(upload_to="gallery", default='default.jpg')
