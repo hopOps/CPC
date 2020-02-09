@@ -5,12 +5,12 @@ from . import views
 app_name = 'web_portal'
 urlpatterns = [
     # Home
-    path('', views.index, name='index'),
+    path('', views.IndexView.as_view(), name='index'),
 
     # Login Page
     path('login', views.login, name='login'),
 
     # Detail
-    path('<int:picture_id>', views.detail, name='detail'),
+    path('<int:pk>', views.DetailView.as_view(), name='detail'),
 ]
 

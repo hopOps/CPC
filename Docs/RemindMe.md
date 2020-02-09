@@ -72,3 +72,23 @@ Edit *portal_web/admin.py* and add this line :
 Add this line in he list urlpatterns (file .\urls.py):
 
     path('portal_web/', include('portal_web.urls')),
+	
+templateView:
+
+<https://docs.djangoproject.com/en/3.0/intro/tutorial04/>
+
+	- view.py
+	
+	from django.views import generic
+	
+	class DetailView(generic.DetailView):
+    model = Question
+    template_name = 'polls/detail.html'
+	
+	- urls.py
+	
+	path('<int:pk>/', views.DetailView.as_view(), name='detail'),
+	
+*note: It's pk that is return with the DetailView generic*
+	
+	
