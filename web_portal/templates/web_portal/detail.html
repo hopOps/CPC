@@ -4,8 +4,20 @@
     <h2>Details</h2>
     <p>Picture Name: {{ picture.name }}</p>
     <a>Picture Description: {{ picture.description }}</a>
+<div class="row">
+    <div class="col">
+          <h2>Responsive Image</h2>
+          <img class="img-fluid" src="{{ picture.photo }}" alt="abc">
+    </div>
 
-    <div>
-        <img src="{{ picture.photo }}" width="640"/>
+    <div class="col ">
+          <h2>Responsive Image</h2>
+          <img class="img-fluid" src="{{ picture.photo }}" alt="abc">
+    </div>
+</div>
+
+    <div class="container-fluid">
+          <h2>Responsive Image</h2>
+          <img class="img-fluid" src="{{ picture.photo }}" alt="abc">
     </div>
 {% endblock content %}
