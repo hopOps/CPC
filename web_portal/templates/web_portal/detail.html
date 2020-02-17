@@ -1,23 +1,13 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h2>Details</h2>
-    <p>Picture Name: {{ picture.name }}</p>
-    <a>Picture Description: {{ picture.description }}</a>
-<div class="row">
-    <div class="col">
-          <h2>Responsive Image</h2>
-          <img class="img-fluid" src="{{ picture.photo }}" alt="abc">
-    </div>
 
-    <div class="col ">
-          <h2>Responsive Image</h2>
-          <img class="img-fluid" src="{{ picture.photo }}" alt="abc">
-    </div>
-</div>
+    <container class="container">
+        <h3>Picture Name: {{ picture.name }}</h3>
+    </container>
 
     <div class="container-fluid">
-          <h2>Responsive Image</h2>
           <img class="img-fluid" src="{{ picture.photo }}" alt="abc">
+          <a>Picture Description: {{ picture.description }}</a>
     </div>
 {% endblock content %}

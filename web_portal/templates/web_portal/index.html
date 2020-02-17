@@ -1,21 +1,25 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <div class="starter-template">
-    <p></p>
-    <h1>Pixxx</h1>
-    <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+    <!--<div class="starter-template">-->
+    <h1 class="show">Pixxx</h1>
+    <p class="lead">Here a quick Picture View. Click on a picture to it in full screen.</p>
 
 {% if latest_picture_list %}
-    <ul>
+
+    <div class="row">
     {% for picture in latest_picture_list %}
-       <!-- <li><a href="/web_portal/{{ picture.id }}/">{{ picture.name }}</a></li>-->
-        <li><a href="{% url 'web_portal:detail' picture.id %}">{{ picture.name }}</a></li>
+    <div class="col">
+          <h8>{{ picture.name }}</h8>
+          <a href="{% url 'web_portal:detail' picture.id %}"><img class="img-fluid" src="{{ picture.photo }}" alt="abc"></a>
+    </div>
+
     {% endfor %}
-    </ul>
+    </div>
+
 {% else %}
     <p>No pictures are available.</p>
 {% endif %}
 
-  </div>
+  <!--</div>-->
 {% endblock content %}

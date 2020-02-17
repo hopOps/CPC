@@ -13,8 +13,10 @@ class IndexView(generic.ListView):
     context_object_name = 'latest_picture_list'
 
     def get_queryset(self):
-        """Return the last five published pictures."""
-        return Picture.objects.order_by('-pub_date')[:5]
+        """Return the last five published pictures.
+        return Picture.objects.order_by('-pub_date')[:5]"""
+        return Picture.objects.order_by('-pub_date')
+        #return len(Picture.objects.all())
 
 
 # def index(request):
