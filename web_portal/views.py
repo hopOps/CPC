@@ -34,6 +34,38 @@ class DetailView(generic.DetailView):
     template_name = 'web_portal/detail.html'
 
 
+class ListView(generic.ListView):
+    template_name = 'web_portal/test.html'
+    context_object_name = 'latest_picture_list'
+
+    def get_queryset(self):
+        """Return the last five published pictures.
+        return Picture.objects.order_by('-pub_date')[:5]"""
+        return Picture.objects.order_by('-pub_date')
+
+
+#def detail(request, picture_id):
+ #   picture = get_object_or_404(Picture, pk=picture_id)
+ #   return render(request, 'web_portal/detail.html', {'picture': picture})
+
+
+# class DetailView(generic.DetailView):
+#     template_name = 'web_portal/index.html'
+#     context_object_name = 'latest_picture_list'
+#
+#     def get_queryset(self):
+#         """Return the last five published pictures.
+#         return Picture.objects.order_by('-pub_date')[:5]"""
+#         return Picture.objects.order_by('-pub_date')
+
+
+#def public_profile(request, username_in_url):
+#    user = User.objects.get(username = username_in_url)
+#    context = {
+#        'user': user,
+#    }
+#    return render_to_response('public_profile.html', context)
+
 # def detail(request, picture_id):
 #     picture = get_object_or_404(Picture, pk=picture_id)
 #     return render(request, 'web_portal/detail.html', {'picture': picture})

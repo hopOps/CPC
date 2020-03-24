@@ -12,5 +12,8 @@ urlpatterns = [
 
     # Detail
     path('<int:pk>', views.DetailView.as_view(), name='detail'),
+
+    # test
+    path('', views.ListView.as_view(), name='test'),
 ]
 

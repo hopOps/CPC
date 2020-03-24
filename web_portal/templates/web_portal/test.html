@@ -1,15 +1,29 @@
-{% extends "base.html" %}
 
 {% block content %}
 
 <div id="details" class="carousel slide" data-ride="carousel">
   <ul class="carousel-indicators">
     <li data-target="#demo" data-slide-to="0" class="active"></li>
-    <li data-target="{% url 'web_portal:detail' picture.id %}" data-slide-to="1"></li>
+    <li data-target="{% url 'web_portal:test' picture.id %}" data-slide-to="1"></li>
     <li data-target="#demo" data-slide-to="2"></li>
   </ul>
 
+<div class="carousel-inner">
+{% for picture in latest_picture_list|slice:":3" %}
+    {% if forloop.first %}
+        <div class="active item">
+    {% else %}
+        <div class="item">
+    {% endif %}
+        <blockquote>
+            <p>{{ picture.description }}</p>
+        </blockquote>
+        <label>{{ picture.name }}</label>
+    </div>
+{% endfor %}
+</div>
 
+    <!--
   <div class="carousel-inner">
     <div class="carousel-item active">
       <img class="img-fluid" src="{{ picture.photo }}" alt="{{ picture.name }}">
@@ -40,6 +54,6 @@
     <span class="carousel-control-next-icon"></span>
   </a>
 </div>
-
+-->
 
 {% endblock content %}
