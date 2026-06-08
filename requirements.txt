@@ -1,0 +1,17 @@
+# Django 5.0 LTS
+Django>=5.0,<5.1
+
+# Bootstrap 5 for Django
+django-bootstrap5>=24.3,<25.0
+
+# Database (SQLite is included in Python standard library)
+# For production, you might want to use:
+# psycopg2-binary>=2.9.9  # PostgreSQL
+# mysqlclient>=2.2.0      # MySQL
+
+# Development tools
+python-dotenv>=1.0.0
+
+# Security
+# django-cors-headers>=4.3.1  # Uncomment if you need CORS
+# django-environ>=0.11.2      # Uncomment for better environment management
