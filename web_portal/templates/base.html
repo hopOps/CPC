@@ -5,14 +5,14 @@ layout: From Start Template
 title: Base
 extra_css: "starter-template.css"
 ---
-{% load django_bootstrap5 %}
+{% load bootstrap5 %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}CPC{% endblock %}</title>
-    {% django_bootstrap5_css %}
+    {% bootstrap5_css %}
     {% block extra_css %}
     <link rel="stylesheet" href="{% static 'starter-template.css' %}">
     {% endblock %}
@@ -55,7 +55,7 @@ extra_css: "starter-template.css"
         {% endblock content %}
     </main>
 
-    {% django_bootstrap5_js %}
+    {% bootstrap5_js %}
     {% block extra_js %}{% endblock %}
 </body>
 </html>
